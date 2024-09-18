@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "author": "JAIR DELVAL AGUIRRE",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 25.2,
+      "left": 186.2,
+      "attrs": { "color": "white" }
+    },
+    {
+      "type": "wokwi-pushbutton-6mm",
+      "id": "btn1",
+      "top": 161,
+      "left": -67.2,
+      "attrs": { "color": "white" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.2", "led1:C", "black", [ "v0" ] ],
+    [ "esp:4", "led1:A", "green", [ "h0" ] ],
+    [ "btn1:1.r", "esp:14", "green", [ "v0" ] ],
+    [ "esp:5V", "btn1:2.r", "red", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
